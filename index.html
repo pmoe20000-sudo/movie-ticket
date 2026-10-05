@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Form Box -->
+        <div class="form-box">
+            <!-- Login Form -->
+            <form id="loginForm" class="input-group">
+                <h2>Login</h2>
+                <div class="input-field">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-field">
+                    <input type="password" placeholder="Password" maxlength="8" required>
+                </div>
+                <button type="submit" class="submit-btn">Log In</button>
+                <p class="toggle-text">Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" class="input-group hidden">
+                <h2>Sign Up</h2>
+                <div class="input-field">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-field">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-field">
+                    <input type="password" placeholder="Password" maxlength="8" required>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+                <p class="toggle-text">Already have an account? <a href="#" id="showLogin">Log In</a></p>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

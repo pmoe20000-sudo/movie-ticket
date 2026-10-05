@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Ticket Booking System</title>
+  <link rel="stylesheet" href="hp.css">
+</head>
+<body>
+  <header>
+    <h1>🎬 Cinema Ticket Booking</h1>
+  </header>
+
+  <!-- ၁။ ပင်မစာမျက်နှာ (Home Page) -->
+  <section id="home-page" class="container">
+    <h2>🎬Now Showing</h2><br>
+
+    <div class="movie-grid" id="movie-grid">
+      <!-- JavaScript မှ ရုပ်ရှင်များကို ထည့်သွင်းပေးမည် -->
+    </div>
+  </section>
+
+  <!-- ၂။ ထိုင်ခုံရွေးချယ်သည့် စာမျက်နှာ (Seat Selection Page) -->
+  <section id="seat-page" class="container hidden">
+    <button class="btn-back" onclick="showHome()">← Back to Home</button>
+    <h2 id="selected-movie-title">Movie Title</h2>
+
+    <div class="booking-options">
+      <div class="option-group">
+        <label for="show-date">Select Date:</label>
+        <input type="date" id="show-date">
+      </div>
+      <div class="option-group">
+        <label for="show-time">Select Time:</label>
+        <select id="show-time">
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="01:00 AM">01:00 AM</option>
+          <option value="04:00 PM">04:00 PM</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ပရိုဂျက်တာ စခရင် -->
+    <div class="screen-container">
+      <div class="screen">SCREEN</div>
+    </div>
+
+    <!-- ထိုင်ခုံများ ခင်းကျင်းမှု -->
+    <div class="seat-container" id="seat-container">
+      <!-- JavaScript မှ ထိုင်ခုံများကို ထည့်သွင်းပေးမည် -->
+    </div>
+    
+    <!-- ထိုင်ခုံ အခြေအနေပြသင်္ကေတများ -->
+    <div class="seat-legend">
+      <div><span class="seat-sample available"></span> Available</div>
+      <div><span class="seat-sample selected"></span> Selected</div>
+      <div><span class="seat-sample booked"></span> Booked</div>
+    </div>
+
+    <!-- အနှစ်ချုပ် တွက်ချက်မှု -->
+    <div class="summary">
+      <p>Selected Seats: <strong id="selected-seats-text">None</strong></p>
+      <p>Total Price: <strong id="total-price">0</strong></p>
+      <button id="btn-payment" class="btn-primary" onclick="goToPayment()" disabled>Proceed to Payment</button>
+    </div>
+  </section>
+
+  <!-- ၃။ ငွေချေသည့် စာမျက်နှာ (Payment Page) -->
+  <section id="payment-page" class="container hidden">
+    <button class="btn-back" onclick="showSeatSelection()">← Back to Seats</button>
+    <h2>Payment Options</h2>
+
+    <div class="payment-summary" id="payment-summary-box">
+      <!-- ဝယ်ယူမှု အသေးစိတ်များ JS မှ ထည့်ပေးမည် -->
+    </div>
+
+    <h3>Select Payment Method:</h3>
+    <div class="payment-grid">
+       <!-- KBZPay -->
+    
+      <button type="button" class="payment-card" onclick="alert('Pay with KBZPay?📞09-123456789');processPayment('KBZPay')">
+        <div class="card-logo">
+      <img src="kbzpay.jpg" alt="KBZPay">
+    </div>
+    <div class="card-label">KBZpay</div>
+  
+</button>
+
+  <!-- Wave Money -->
+   <button type="button" class="payment-card" onclick="alert('Pay with WavePay?📞09-123456789');processPayment('WavePay')">
+        <div class="card-logo">
+      <img src="wavepay.jpg" alt="WavePay">
+    </div>
+    <div class="card-label">WavePay</div>
+  
+</button>
+  
+
+  <!-- AYA Pay -->
+   <button type="button" class="payment-card" onclick="alert('Pay with AYAPay?📞09-123456789');processPayment('AYAPay')">
+        <div class="card-logo">
+      <img src="ayapay.jpg" alt="AYAPay">
+    </div>
+    <div class="card-label">AYAPay</div>
+  
+</button>
+  </div>
+  </section>
+
+  <!-- ၄။ Booking Confirmation Page -->
+  <section id="confirmation-page" class="container hidden">
+    <div class="confirm-card">
+      <div class="success-icon">✓</div>
+      <h2>Booking Confirmed!🎉</h2>
+      <p class="confirm-msg">Thank You! Your movie ticket purschase has been confirmed.</p>
+      
+      <div class="ticket-details" id="ticket-details-box">
+        <!-- လက်မှတ်အသေးစိတ်ကို JS မှ ထည့်ပေးမည် -->
+      </div>
+
+      <button class="btn-primary" onclick="showHome()">Back to Home page</button>
+    </div>
+  </section>
+
+    
+  <script src="hp.js"></script>
+</body>
+</html>
